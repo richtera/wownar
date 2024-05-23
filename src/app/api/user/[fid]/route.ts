@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import neynarClient from "@/clients/neynar";
 import { isApiErrorResponse } from "@neynar/nodejs-sdk";
 
+export const runtime = "edge";
+
 export async function GET(
   request: NextRequest,
   { params }: { params: { fid: string } }
