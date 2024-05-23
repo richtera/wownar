@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
   try {
     const { fid: userFid } = await neynarClient.lookupSigner(signerUuid);
 
-    if (userFid == fid) {
+    if (`${userFid}` === fid) {
       isVerifiedUser = true;
     } else isVerifiedUser = false;
     return NextResponse.json({ isVerifiedUser }, { status: 200 });
@@ -23,10 +23,10 @@ export async function POST(request: NextRequest) {
         { ...err.response.data },
         { status: err.response.status }
       );
-    } else
-      return NextResponse.json(
-        { message: "Something went wrong" },
-        { status: 500 }
-      );
+    }
+    return NextResponse.json(
+      { message: "Something went wrong" },
+      { status: 500 }
+    );
   }
 }
