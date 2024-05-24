@@ -1,0 +1,19 @@
+diff --git a/dist/server/web/sandbox/context.js b/dist/server/web/sandbox/context.js
+index 579ec975b9709b5258d36fc76e9a5e10eaaa68fa..26e45f940f790001feb540df691da67a19a6e503 100644
+--- a/dist/server/web/sandbox/context.js
++++ b/dist/server/web/sandbox/context.js
+@@ -109,11 +109,12 @@ Learn more: https://nextjs.org/docs/api-reference/edge-runtime`);
+ }
+ function createProcessPolyfill() {
+     const processPolyfill = {
+-        env: buildEnvironmentVariablesFrom()
++        env: buildEnvironmentVariablesFrom(),
++        version: process.version
+     };
+     const overridenValue = {};
+     for (const key of Object.keys(process)){
+-        if (key === "env") continue;
++        if (key === "env" || key === "version") continue;
+         Object.defineProperty(processPolyfill, key, {
+             get () {
+                 if (overridenValue[key] !== undefined) {

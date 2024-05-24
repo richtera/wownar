@@ -4,6 +4,7 @@ import "./globals.scss";
 import { AppProvider } from "@/Context/AppContext";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppProvider>
-          {children}
-          <ToastContainer />
-        </AppProvider>
+        <Suspense>
+          <AppProvider>
+            {children}
+            <ToastContainer />
+          </AppProvider>
+        </Suspense>
       </body>
     </html>
   );
