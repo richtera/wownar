@@ -3,6 +3,7 @@
 ## Introduction
 
 `wownar` is a nextjs app that demonstrates the integration of [SIWN](https://docs.neynar.com/docs/how-to-let-users-connect-farcaster-accounts-with-write-access-for-free-using-sign-in-with-neynar-siwn).
+Patched
 
 ## Prerequisites
 
