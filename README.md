@@ -33,7 +33,7 @@ Patched
    cp .env.example .env.local
    ```
 
-   - Edit `.env` to add your `NEYNAR_API_KEY` and `NEXT_PUBLIC_NEYNAR_CLIENT_ID`.
+   - Edit `.env` to add your `NEXT_PUBLIC_NEYNAR_API_KEY` and `NEXT_PUBLIC_NEYNAR_CLIENT_ID`.
 
 ## Run Application
 
